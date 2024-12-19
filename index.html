@@ -5,11 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>랜딩 페이지</title>
     <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nanum+Brush+Script&family=Noto+Sans+KR:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <header class="header">
       <div class="header__container">
-        <h1 class="header__logo">로고</h1>
+        <div class="header__left">
+          <img src="img/logo.jpg" alt="로고" class="header__logo-img" />
+          <h1 class="header__title charThin">
+            Best & Fast
+            <span class="highlight">Auto-sourcing</span>
+          </h1>
+        </div>
         <nav class="header__nav">
           <ul class="nav__list">
             <li class="nav__item"><a href="#section1">메뉴1</a></li>
@@ -22,7 +36,38 @@
 
     <main class="main">
       <!-- 여기에 섹션들이 추가될 예정 -->
-      <section id="section1" class="section">섹션1</section>
+      <section id="section1" class="section">
+        <h2 class="section__title">
+          <span class="highlight-circle">구</span><span class="highlight-circle">매</span><span class="highlight-circle">대</span><span class="highlight-circle">행</span>은 어떻게 이루어질까요?</span>
+        </h2>
+        <div class="section__content">
+          <div class="section__background">
+            <div class="gradient-overlay"></div>
+            <img
+              src="img/airplane.jpg"
+              alt="비행기와 컨테이너"
+              class="background-img"
+            />
+          </div>
+          <div class="section__info">
+            <h3 class="info__title">구매대행의 3단계</h3>
+            <ul class="info__list">
+              <li class="info__item">
+                <h4>제품소싱</h4>
+                <p>내가 판매할 제품을 선택</p>
+              </li>
+              <li class="info__item">
+                <h4>구매관리</h4>
+                <p>제품의 통관부터 배송</p>
+              </li>
+              <li class="info__item">
+                <h4>사후관리</h4>
+                <p>제품의 A/S부터, 구매관리</p>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
       <section id="section2" class="section">섹션2</section>
       <section id="section3" class="section">섹션3</section>
     </main>
