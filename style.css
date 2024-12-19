@@ -76,6 +76,10 @@
   justify-self: end;
 }
 
+.charBlue {
+  color: royalblue;
+}
+
 .nav__list {
   display: flex;
   gap: 2rem;
@@ -121,6 +125,12 @@
   transform: none;
   top: 0;
   left: 0;
+}
+
+.section__title p {
+  font-size: 2.3rem;
+  color: #666;
+  font-family: "Nanum Brush Script", serif;
 }
 
 .section__title .highlight-circle {
