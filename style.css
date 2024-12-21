@@ -580,6 +580,7 @@
   display: flex;
   gap: 2rem;
   align-items: center;
+  padding-top: 50px;
 }
 
 .gallery-img-container {
@@ -608,6 +609,7 @@
   object-fit: contain;
   background-color: #f8f8f8;
   transition: transform 0.3s ease;
+  border-radius: 12px; /* 이미지 모서리를 12px만큼 둥글게 처리 */
 }
 
 .gallery-img-container:hover img {
