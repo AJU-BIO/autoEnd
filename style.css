@@ -1104,3 +1104,39 @@
     font-size: 1.5rem !important; /* 질문 텍스트도 함께 조정 */
   }
 }
+
+/* 태블릿 (768px ~ 1023px) */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .highlight-circle::before {
+    width: 8px;
+    height: 8px;
+    top: -7px;
+  }
+}
+
+/* 모바일 (767px 이하) */
+@media (max-width: 767px) {
+  .highlight-circle::before {
+    width: 7px;
+    height: 7px;
+    top: -6px;
+  }
+}
+
+/* 작은 모바일 (576px 이하) */
+@media screen and (max-width: 576px) {
+  .highlight-circle::before {
+    width: 6px;
+    height: 6px;
+    top: -5px;
+  }
+}
+
+/* 매우 작은 모바일 (400px 이하) */
+@media screen and (max-width: 400px) {
+  .highlight-circle::before {
+    width: 5px;
+    height: 5px;
+    top: -4px;
+  }
+}
