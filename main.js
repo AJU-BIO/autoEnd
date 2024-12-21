@@ -91,6 +91,42 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // 갤러리 생성 함수 호출
   createGallery();
+
+  // 클릭 가능한 모든 이미지 선택
+  const clickableImages = document.querySelectorAll(
+    ".gallery-img-container img, .full-width-img"
+  );
+  const popup = document.createElement("div");
+  popup.className = "image-popup";
+  const popupImg = document.createElement("img");
+  const closeBtn = document.createElement("span");
+  closeBtn.className = "close-btn";
+  closeBtn.innerHTML = "&times;";
+
+  popup.appendChild(closeBtn);
+  popup.appendChild(popupImg);
+  document.body.appendChild(popup);
+
+  clickableImages.forEach((img) => {
+    img.addEventListener("click", function () {
+      popupImg.src = this.src;
+      popup.classList.add("active");
+    });
+  });
+
+  // 팝업 닫기 (X 버튼 또는 배경 클릭)
+  popup.addEventListener("click", function (e) {
+    if (e.target === popup || e.target === closeBtn) {
+      popup.classList.remove("active");
+    }
+  });
+
+  // ESC 키로 팝업 닫기
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape" && popup.classList.contains("active")) {
+      popup.classList.remove("active");
+    }
+  });
 });
 
 // 이미지 데이터
