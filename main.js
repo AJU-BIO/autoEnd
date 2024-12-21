@@ -25,38 +25,38 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 
-  // 스크롤 애니메이션
-  const sections = document.querySelectorAll(".section");
+  // // 스크롤 애니메이션
+  // const sections = document.querySelectorAll(".section");
 
-  function checkScroll() {
-    const triggerPoint = window.innerHeight / 3; // 화면 높이의 1/3 지점을 트리거 포인트로 설정
+  // function checkScroll() {
+  //   const triggerPoint = window.innerHeight / 3; // 화면 높이의 1/3 지점을 트리거 포인트로 설정
 
-    sections.forEach((section) => {
-      const sectionTop = section.getBoundingClientRect().top;
+  //   sections.forEach((section) => {
+  //     const sectionTop = section.getBoundingClientRect().top;
 
-      // 섹션이 트리거 포인트를 지나면 완전히 나타나고, 그 이상 올라가면 사라지게
-      if (
-        sectionTop <= triggerPoint &&
-        sectionTop > -section.offsetHeight + triggerPoint
-      ) {
-        section.classList.add("reveal");
-      } else {
-        section.classList.remove("reveal");
-      }
-    });
-  }
+  //     // 섹션이 트리거 포인트를 지나면 완전히 나타나고, 그 이상 올라가면 사라지게
+  //     if (
+  //       sectionTop <= triggerPoint &&
+  //       sectionTop > -section.offsetHeight + triggerPoint
+  //     ) {
+  //       section.classList.add("reveal");
+  //     } else {
+  //       section.classList.remove("reveal");
+  //     }
+  //   });
+  // }
 
-  // 초기 실행
-  checkScroll();
+  // // 초기 실행
+  // checkScroll();
 
-  // 스크롤 이벤트에 디바운스 적용
-  let scrollTimeout;
-  window.addEventListener("scroll", () => {
-    if (scrollTimeout) {
-      window.cancelAnimationFrame(scrollTimeout);
-    }
-    scrollTimeout = window.requestAnimationFrame(checkScroll);
-  });
+  // // 스크롤 이벤트에 디바운스 적용
+  // let scrollTimeout;
+  // window.addEventListener("scroll", () => {
+  //   if (scrollTimeout) {
+  //     window.cancelAnimationFrame(scrollTimeout);
+  //   }
+  //   scrollTimeout = window.requestAnimationFrame(checkScroll);
+  // });
 
   // 갤러리 생성 함수
   function createGallery() {

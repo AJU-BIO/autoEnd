@@ -701,21 +701,21 @@
 
 /* 섹션이 겹치는 효과를 위한 스타일 */
 .section {
-  margin-top: -50px; /* 섹션간 겹침 정도 조절 */
-  padding-top: 50px; /* 겹침으로 인한 콘텐츠 가림 방지 */
+  /* margin-top: -50px; */ /* 섹션간 겹침 정도 조절 */
+  /* padding-top: 50px; */ /* 겹침으로 인한 콘텐츠 가림 방지 */
 }
 
 .section:first-child {
-  margin-top: 0;
+  /* margin-top: 0; */
 }
 
 /* 스크롤 시 나타나는 효과 */
 .section.reveal {
-  opacity: 1;
+  /* opacity: 1; */
 }
 
 .section:not(.reveal) {
-  opacity: 0.3;
+  /* opacity: 0.3; */
 }
 
 /* 태블릿 반응형 스타일 */
@@ -958,3 +958,23 @@
     font-size: 1rem;
   }
 }
+
+/* 스크롤 효과 관련 스타일 (비활성화) */
+/*
+.section {
+  margin-top: -50px;
+  padding-top: 50px;
+}
+
+.section:first-child {
+  margin-top: 0;
+}
+
+.section.reveal {
+  opacity: 1;
+}
+
+.section:not(.reveal) {
+  opacity: 0.3;
+}
+*/
