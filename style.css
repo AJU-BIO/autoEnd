@@ -102,6 +102,7 @@
   height: 100%;
   overflow-y: visible;
   background-color: whitesmoke;
+  padding-top: 2rem;
 }
 
 .section {
@@ -467,19 +468,20 @@
 }
 
 /* 모바일 메뉴 스타일 */
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1023px) {
   .hamburger-btn {
     display: flex;
   }
 
   .header__nav {
     position: fixed;
-    top: 72px; /* 헤더 높이에 맞게 조정 */
+    top: 71px;
     right: -100%;
     width: 100%;
     height: auto;
     background-color: #1b1b1b;
     transition: right 0.3s ease-in-out;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
   }
 
   .header__nav.active {
@@ -1138,5 +1140,9 @@
     width: 5px;
     height: 5px;
     top: -4px;
+  }
+
+  .header__title {
+    font-size: 1rem;
   }
 }
