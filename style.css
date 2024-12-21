@@ -1146,3 +1146,51 @@
     font-size: 1rem;
   }
 }
+
+/* 태블릿 & 모바일 공통 (1024px 미만) */
+@media screen and (max-width: 1023px) {
+  .section__content {
+    flex-direction: column;
+    padding: 1.5rem;
+    width: 95%;
+    gap: 1.5rem;
+  }
+
+  .section__background {
+    min-height: 300px;
+    width: 100%;
+  }
+
+  .gallery-item {
+    flex-direction: column;
+    background: #f8f8f8;
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 2rem;
+  }
+
+  .gallery-img-container {
+    order: 1;
+    width: 100%;
+    padding-bottom: 60%;
+  }
+
+  .gallery-text-container {
+    order: 2;
+    width: 100%;
+    padding: 1.5rem;
+    background: transparent;
+  }
+}
+
+/* 작은 화면에서의 추가 조정 */
+@media screen and (max-width: 576px) {
+  .section__background {
+    min-height: 200px;
+  }
+
+  .section__content {
+    width: 100%;
+    padding: 1rem;
+  }
+}
