@@ -43,9 +43,9 @@
         </button>
         <nav class="header__nav">
           <ul class="nav__list">
-            <li class="nav__item"><a href="#section1">메뉴1</a></li>
-            <li class="nav__item"><a href="#section2">메뉴2</a></li>
-            <li class="nav__item"><a href="#section3">메뉴3</a></li>
+            <li class="nav__item"><a href="#section1">Top</a></li>
+            <li class="nav__item"><a href="#section2">소싱</a></li>
+            <li class="nav__item"><a href="#section3">후기</a></li>
           </ul>
         </nav>
       </div>
@@ -62,12 +62,12 @@
         </h2>
         <div class="section__content">
           <div class="section__background">
-            <div class="gradient-overlay"></div>
             <img
               src="img/airplane.jpg"
               alt="비행기와 컨테이너"
               class="background-img"
             />
+            <div class="gradient-overlay"></div>
           </div>
           <div class="section__info">
             <h3 class="info__title">구매대행의 3단계</h3>
@@ -94,10 +94,8 @@
           <span class="highlight-circle charBlue">제</span>
           <span class="highlight-circle charBlue">품</span>
           <span class="highlight-circle charBlue">소</span>
-          <span class="highlight-circle charBlue">싱</span>! 왜?
-          <p>
-            일단, 제품 판매가 되어야 구매관리/사후관리 도 할 수 있기 때문입니다.
-          </p>
+          <span class="highlight-circle charBlue">싱</span>!
+          <p>왜? 어떤제품 이냐에 따라 모른 것이 달라집니다.</p>
         </h2>
         <div class="section__content">
           <div class="section__info">
@@ -111,44 +109,65 @@
             </h3>
             <div class="info__content">
               <p class="info__description">
-                똑같이 100개의 상품을 업로드 한다고 가정했을 때,<br />
-                <strong>최근 판매가 있었던</strong> 100개 상품을 올리는 것과<br />
-                <strong>무작위로</strong> 100개를 올리는 것은<br />
-                판매될 확률에 있어 큰 차이를 보이게 됩니다.
+                100개의 상품 <strong>업로드</strong> 가정 시,
               </p>
+              <p class="info__description">
+                <strong>최근 판매가 있었던</strong> 100개 상품을 올리는 것과
+              </p>
+              <p class="info__description">
+                <strong>무작위로</strong> 100개를 올리는 것은
+              </p>
+              <p class="info__description">결과가 다르지 않을까요?</p>
             </div>
           </div>
           <div class="section__background">
-            <div class="gradient-overlay"></div>
             <img
               src="https://plus.unsplash.com/premium_photo-1678371210267-44e0aeee4b72?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-              alt="컴퓨터와 자동화"
+              alt="Seeds"
               class="background-img"
             />
+            <div class="gradient-overlay"></div>
+            <div class="overlay-text">
+              <p>결국, 100개의 씨앗을</p>
+              <p><span class="highlight-text">비옥한 땅</span>에 뿌리는 것과</p>
+              <p>
+                <span class="highlight-text">메마른 땅</span>에 뿌리는 차이
+                입니다.
+              </p>
+              <p class="question-text ff_brushStyle">
+                어떤 땅에서 새싹이 돋아날까요?
+              </p>
+            </div>
           </div>
         </div>
       </section>
 
       <section id="section3" class="section">
         <h2 class="section__title">
-          <span class="highlight-circle">시</span>
-          <span class="highlight-circle">작</span>
-          <span class="highlight-circle">하</span>
-          <span class="highlight-circle">기</span>를 도와드립니다
+          그러면
+          <span class="highlight-circle charBlue">어</span>
+          <span class="highlight-circle charBlue">떻</span>
+          <span class="highlight-circle charBlue">게</span>
+          팔릴 제품을 찾을까요?
         </h2>
         <div class="section__content">
-          <div class="section__background">
-            <div class="gradient-overlay"></div>
-            <img src="img/start.jpg" alt="시작하기" class="background-img" />
-          </div>
-          <div class="section__info">
-            <h3 class="info__title">시작을 위한 3단계</h3>
-            <ul class="info__list">
-              <li class="info__item">
-                <h4>회원가입</h4>
-                <p>간단한 정보로 빠른 가입</p>
-              </li>
-            </ul>
+          <img
+            src="img/best.PNG"
+            alt="베스트 상품 찾기"
+            class="full-width-img"
+          />
+        </div>
+      </section>
+
+      <section id="section4" class="section">
+        <h2 class="section__title">
+          <span class="highlight-circle charBlue">실</span>
+          <span class="highlight-circle charBlue">제</span>
+          사용 후기입니다
+        </h2>
+        <div class="section__content">
+          <div class="gallery" id="imageGallery">
+            <!-- JavaScript로 동적 생성될 내용 -->
           </div>
         </div>
       </section>
@@ -159,6 +178,11 @@
         <button type="button" class="btn-payment">결제하기</button>
       </div>
     </footer>
+
+    <div id="imagePopup" class="image-popup">
+      <span class="close-btn">&times;</span>
+      <img id="popupImage" src="" alt="" />
+    </div>
 
     <script src="main.js"></script>
   </body>

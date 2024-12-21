@@ -24,4 +24,146 @@ document.addEventListener("DOMContentLoaded", function () {
       hamburgerBtn.classList.remove("active");
     }
   });
+
+  // 스크롤 애니메이션
+  const sections = document.querySelectorAll(".section");
+
+  function checkScroll() {
+    const triggerPoint = window.innerHeight / 3; // 화면 높이의 1/3 지점을 트리거 포인트로 설정
+
+    sections.forEach((section) => {
+      const sectionTop = section.getBoundingClientRect().top;
+
+      // 섹션이 트리거 포인트를 지나면 완전히 나타나고, 그 이상 올라가면 사라지게
+      if (
+        sectionTop <= triggerPoint &&
+        sectionTop > -section.offsetHeight + triggerPoint
+      ) {
+        section.classList.add("reveal");
+      } else {
+        section.classList.remove("reveal");
+      }
+    });
+  }
+
+  // 초기 실행
+  checkScroll();
+
+  // 스크롤 이벤트에 디바운스 적용
+  let scrollTimeout;
+  window.addEventListener("scroll", () => {
+    if (scrollTimeout) {
+      window.cancelAnimationFrame(scrollTimeout);
+    }
+    scrollTimeout = window.requestAnimationFrame(checkScroll);
+  });
+
+  // 갤러리 생성 함수
+  function createGallery() {
+    const gallery = document.getElementById("imageGallery");
+    const popup = document.getElementById("imagePopup");
+    const popupImg = document.getElementById("popupImage");
+    const closeBtn = document.querySelector(".close-btn");
+
+    galleryImages.forEach((item, index) => {
+      const galleryItem = document.createElement("div");
+      galleryItem.className = "gallery-item";
+
+      const imgContainer = document.createElement("div");
+      imgContainer.className = "gallery-img-container";
+
+      const img = document.createElement("img");
+      img.src = item.url;
+      img.alt = item.alt;
+
+      // 이미지 클릭 이벤트 추가
+      imgContainer.addEventListener("click", () => {
+        popup.classList.add("active");
+        popupImg.src = item.url;
+        popupImg.alt = item.alt;
+        document.body.style.overflow = "hidden"; // 스크롤 방지
+      });
+
+      const textContainer = document.createElement("div");
+      textContainer.className = "gallery-text-container";
+      textContainer.innerHTML = `
+        <h3>${item.title}</h3>
+        <p>${item.description}</p>
+      `;
+
+      imgContainer.appendChild(img);
+      galleryItem.appendChild(index % 2 === 0 ? imgContainer : textContainer);
+      galleryItem.appendChild(index % 2 === 0 ? textContainer : imgContainer);
+
+      gallery.appendChild(galleryItem);
+    });
+
+    // 팝업 닫기 이벤트
+    function closePopup() {
+      popup.classList.remove("active");
+      document.body.style.overflow = ""; // 스크롤 복원
+    }
+
+    // X 버튼 클릭으로 닫기
+    closeBtn.addEventListener("click", closePopup);
+
+    // 팝업 배경 클릭으로 닫기
+    popup.addEventListener("click", (e) => {
+      if (e.target === popup) {
+        closePopup();
+      }
+    });
+
+    // ESC 키로 닫기
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && popup.classList.contains("active")) {
+        closePopup();
+      }
+    });
+  }
+
+  // 갤러리 생성 함수 호출
+  createGallery();
 });
+
+// 이미지 데이터
+const galleryImages = [
+  {
+    url: "/img/10minutes.png",
+    alt: "Gallery Image 1",
+    title: "Just 10 Minutes",
+    description: "10분만에 프로그램의 진가를 알아봐준 분도 계십니다 ^^",
+  },
+  {
+    url: "/img/1500sales.png",
+    alt: "Gallery Image 2",
+    title: "매출이 무려 3배 상승",
+    description:
+      "프로그램 사용전 최고 500, 평균 300에서<br>이제 천만원 중반대 돌파!!",
+  },
+  {
+    url: "/img/highPerformance.png",
+    alt: "Gallery Image 3",
+    title: "결과로 모든걸 말한다.",
+    description: "판매확률 증가 → 판매건수 증가<br>매출 증가",
+  },
+  {
+    url: "/img/kMongBestProgram.png",
+    alt: "Gallery Image 4",
+    title: "순간의 선택이 매출을 좌우합니다.",
+    description: "대다수의 오토소싱 유저는 타 프로그램 사용경험이 있습니다.",
+  },
+  {
+    url: "/img/thanksTo.png",
+    alt: "Gallery Image 4",
+    title: "저희도 감사합니다.",
+    description:
+      "힘들게 고민해서 만든 프로그램<br>진가를 알아보고 사용해주셔서 감사합니다.",
+  },
+  {
+    url: "/img/kMongBestProgram.png",
+    alt: "Gallery Image 4",
+    title: "순간의 선택이 매출을 좌우합니다.",
+    description: "대다수의 오토소싱 유저는 타 프로그램 사용경험이 있습니다.",
+  },
+];
