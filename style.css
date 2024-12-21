@@ -700,23 +700,23 @@
 }
 
 /* 섹션이 겹치는 효과를 위한 스타일 */
-.section {
-  /* margin-top: -50px; */ /* 섹션간 겹침 정도 조절 */
-  /* padding-top: 50px; */ /* 겹침으로 인한 콘텐츠 가림 방지 */
-}
+/* .section {
+  margin-top: -50px;
+  padding-top: 50px;
+} */
 
-.section:first-child {
-  /* margin-top: 0; */
-}
+/* .section:first-child {
+  margin-top: 0;
+} */
 
 /* 스크롤 시 나타나는 효과 */
-.section.reveal {
-  /* opacity: 1; */
-}
+/* .section.reveal {
+  opacity: 1;
+} */
 
-.section:not(.reveal) {
-  /* opacity: 0.3; */
-}
+/* .section:not(.reveal) {
+  opacity: 0.3;
+} */
 
 /* 태블릿 반응형 스타일 */
 @media (max-width: 1024px) {
@@ -920,7 +920,7 @@
   }
 
   .header__logo-img {
-    height: 40px; /* 로고 크기 축소 */
+    height: 40px; /* 로고 크기 축정 */
   }
 
   .section__title {
@@ -978,3 +978,87 @@
   opacity: 0.3;
 }
 */
+
+/* highlight-circle 기본 스타일 수정 */
+.highlight-circle::before {
+  content: "";
+  position: absolute;
+  width: 9px;
+  height: 9px;
+  background-color: #1a2b47;
+  border-radius: 50%;
+  top: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0.8;
+}
+
+/* 태블릿 사이즈에서의 동그라미 크기 조정 */
+@media screen and (max-width: 768px) {
+  .highlight-circle::before {
+    width: 7px;
+    height: 7px;
+    top: -6px;
+  }
+}
+
+/* 모바일 사이즈에서의 텍스트 및 동그라미 크기 조정 */
+@media screen and (max-width: 500px) {
+  .section__title {
+    font-size: 1.5rem;
+  }
+
+  .section__title p {
+    font-size: 1.2rem;
+  }
+
+  .section__title .highlight-circle {
+    font-size: 1.5rem;
+  }
+
+  .highlight-circle::before {
+    width: 5px;
+    height: 5px;
+    top: -4px;
+  }
+
+  .info__title {
+    font-size: 1.3rem;
+  }
+
+  .info__title span {
+    font-size: 1.3rem;
+  }
+
+  .info__description {
+    font-size: 1rem;
+  }
+
+  .info__item h4 {
+    font-size: 1.1rem;
+  }
+
+  .info__item p {
+    font-size: 0.9rem;
+  }
+
+  .overlay-text p {
+    font-size: 1.2rem;
+  }
+
+  .question-text {
+    font-size: 1.4rem !important;
+  }
+}
+
+/* 모바일 사이즈에서의 섹션2 이미지 높이 조정 */
+@media screen and (max-width: 500px) {
+  .section__background {
+    min-height: 300px; /* 기존 200px에서 300px로 증가 */
+  }
+
+  /* 이미지가 잘 보이도록 오버레이 텍스트 위치 조정 */
+  .overlay-text {
+    padding: 0 15px;
+  }
+}
