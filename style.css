@@ -101,6 +101,7 @@
   position: relative;
   height: 100%;
   overflow-y: visible;
+  background-color: whitesmoke;
 }
 
 .section {
@@ -1142,5 +1143,11 @@
 
   .header__container {
     gap: 1rem; /* 요소들 간의 간격도 줄임 */
+  }
+
+  .info__description strong {
+    font-size: 1rem; /* 기존 1.2rem에서 축소 */
+    color: royalblue;
+    font-weight: bold;
   }
 }
