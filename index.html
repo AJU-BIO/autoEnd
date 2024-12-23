@@ -16,7 +16,7 @@
     <meta property="og:url" content="https://autoend.netlify.app" />
     <meta property="og:site_name" content="오토소싱" />
     <meta property="og:type" content="website" />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="./style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -31,158 +31,292 @@
       <div class="header__container">
         <div class="header__left">
           <img src="img/logo.jpg" alt="로고" class="header__logo-img" />
-          <h1 class="header__title charThin">
-            Best & Fast
-            <span class="highlight">Auto-sourcing</span>
-          </h1>
+          <h1 class="header__title">오토엔드</h1>
         </div>
+        <div class="buybtn">
+          <a href="https://autoend.netlify.app" id="buy" class="buybtn__link">
+            오토소싱 구매하기
+          </a>
+        </div>
+        <nav class="header__nav">
+          <ul class="nav__list">
+            <li class="nav__item"><a href="#intro">소개</a></li>
+            <li class="nav__item"><a href="#benefits">장점</a></li>
+            <li class="nav__item"><a href="#reviews">후기</a></li>
+            <li class="nav__item"><a href="#cases">사례분석</a></li>
+          </ul>
+        </nav>
         <button class="hamburger-btn">
           <span></span>
           <span></span>
           <span></span>
         </button>
-        <nav class="header__nav">
-          <ul class="nav__list">
-            <li class="nav__item"><a href="#section1">Top</a></li>
-            <li class="nav__item"><a href="#section2">소싱</a></li>
-            <li class="nav__item"><a href="#section3">후기</a></li>
-          </ul>
-        </nav>
       </div>
     </header>
 
     <main class="main">
-      <!-- 여기에 섹션들이 추가될 예정 -->
-      <section id="section1" class="section">
-        <h2 class="section__title">
-          <span class="highlight-circle">구</span>
-          <span class="highlight-circle">매</span>
-          <span class="highlight-circle">대</span>
-          <span class="highlight-circle">행</span>은 어떻게 이루어질까요?
-        </h2>
-        <div class="section__content">
-          <div class="section__background">
-            <img
-              src="img/airplane.jpg"
-              alt="비행기와 컨테이너"
-              class="background-img"
-            />
-            <div class="gradient-overlay"></div>
-          </div>
-          <div class="section__info">
-            <h3 class="info__title">구매대행의 3단계</h3>
-            <ul class="info__list">
-              <li class="info__item">
-                <h4>제품소싱</h4>
-                <p>내가 판매할 제품을 선택</p>
-              </li>
-              <li class="info__item">
-                <h4>구매관리</h4>
-                <p>제품의 통관부터 배송</p>
-              </li>
-              <li class="info__item">
-                <h4>사후관리</h4>
-                <p>제품의 A/S부터, 구매관리</p>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </section>
-      <section id="section2" class="section">
-        <h2 class="section__title">
-          가장 중요한 것은 ?
-          <span class="highlight-circle charBlue">제</span>
-          <span class="highlight-circle charBlue">품</span>
-          <span class="highlight-circle charBlue">소</span>
-          <span class="highlight-circle charBlue">싱</span>!
-          <p>왜? 어떤제품 이냐에 따라 모른 것이 달라집니다.</p>
-        </h2>
-        <div class="section__content">
-          <div class="section__info">
-            <h3 class="info__title">
-              결국은,
-              <span class="highlight-circle charBlue">판</span>
-              <span class="highlight-circle charBlue">매</span>
+      <div class="main__container">
+        <section id="intro" class="section">
+          <div class="innerBox">
+            <div class="box__container charWhite">
+              <div class="box big">
+                <div class="box__title longLine bigChar">
+                  <p>쉽고 빠른 구매대행</p>
 
-              <span class="highlight-circle charBlue">확</span>
-              <span class="highlight-circle charBlue">률</span> 의 차이
-            </h3>
-            <div class="info__content">
-              <p class="info__description">
-                100개의 상품 <strong>업로드</strong> 가정 시,
-              </p>
-              <p class="info__description">
-                <strong>최근 판매가 있었던</strong> 100개 상품을 올리는 것과
-              </p>
-              <p class="info__description">
-                <strong>무작위로</strong> 100개를 올리는 것은
-              </p>
-              <p class="info__description">결과가 다르지 않을까요?</p>
+                  <p class="typing">오토소싱</p>
+                </div>
+                <p class="box__title bigChar handWrite">
+                  이런 분들에게 추천드립니다.
+                </p>
+                <div class="recommendBox">
+                  <div class="innerList">소싱 노가다에 지치신 분</div>
+                  <div class="innerList">업로드에 대비 판매가 부족한 분</div>
+                  <div class="innerList">
+                    사후관리로 소싱에 투자할 시간이 모자란 분
+                  </div>
+                </div>
+                <div class="centerBox noBorder">
+                  <p class="box__description">
+                    저희는 있는 그대로의 후기만으로 홍보드림을 약속드립니다.
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
-          <div class="section__background">
-            <img
-              src="https://plus.unsplash.com/premium_photo-1678371210267-44e0aeee4b72?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-              alt="Seeds"
-              class="background-img"
-            />
-            <div class="gradient-overlay"></div>
-            <div class="overlay-text">
-              <p>결국, 100개의 씨앗을</p>
-              <p><span class="highlight-text">비옥한 땅</span>에 뿌리는 것과</p>
-              <p>
-                <span class="highlight-text">메마른 땅</span>에 뿌리는 차이
-                입니다.
-              </p>
-              <p class="question-text ff_brushStyle">
-                어떤 땅에서 새싹이 돋아날까요?
-              </p>
+        </section>
+
+        <section id="sec1" class="section">
+          <div class="innerBox">
+            <div class="headline">오토소싱 장점 3가지</div>
+            <div class="box__container">
+              <div class="box big">
+                <p class="box__title">빠르다</p>
+                <p class="box__description">
+                  대한민국 1티어 속도로 데이터 제공
+                </p>
+              </div>
+              <div class="box big">
+                <p class="box__title">정확하다</p>
+                <p class="box__description">
+                  최근 3일 이내의 '팔렸던' 제품 정보만
+                </p>
+              </div>
+              <div class="box big">
+                <p class="box__title">쉽다</p>
+                <p class="box__description">
+                  고등학생셀러부터 부업중인 분까지 모두 만족
+                </p>
+              </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      <section id="section3" class="section">
-        <h2 class="section__title">
-          그러면
-          <span class="highlight-circle charBlue">어</span>
-          <span class="highlight-circle charBlue">떻</span>
-          <span class="highlight-circle charBlue">게</span>
-          팔릴 제품을 찾을까요?
-        </h2>
-        <div class="section__content">
-          <img
-            src="img/best.PNG"
-            alt="베스트 상품 찾기"
-            class="full-width-img"
-          />
-        </div>
-      </section>
-
-      <section id="section4" class="section">
-        <h2 class="section__title">
-          <span class="highlight-circle charBlue">실</span>
-          <span class="highlight-circle charBlue">제</span>
-          사용 후기입니다
-        </h2>
-        <div class="section__content">
-          <div class="gallery" id="imageGallery">
-            <!-- JavaScript로 동적 생성될 내용 -->
+        <section id="sec2" class="section">
+          <div class="innerBox">
+            <div class="headline">오토소싱 프로그램 소개</div>
+            <div class="box imgBox">
+              <img
+                src="img/screenshot.png"
+                alt="오토소싱 소개"
+                class="sec2__img clickable"
+              />
+              <p class="sec2__description">
+                구매대행을 위한 프로그램으로, 국내최고의 속도와 퀄리티를
+                자부합니다.
+              </p>
+            </div>
+            <div class="headline">오토소싱 프로그램 기능</div>
+            <div class="box contentBox">
+              <div class="contentBox__box">
+                <div class="contentBox__inner">
+                  <img
+                    src="   https://cdn-icons-png.flaticon.com/512/888/888850.png "
+                    alt="엑셀"
+                    class="cont_icon icon"
+                  />
+                  <div class="contentBox__text">
+                    <p class="cont_title">엑셀기반 A to Z</p>
+                    <p class="cont_description">
+                      사용하기 편하시도록, 데이터의 입출력을 엑셀에서
+                      진행합니다.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="contentBox__box">
+                <div class="contentBox__inner">
+                  <img
+                    src="https://cdn-icons-png.flaticon.com/512/8571/8571584.png"
+                    alt="엑셀"
+                    class="cont_icon icon"
+                  />
+                  <div class="contentBox__text">
+                    <p class="cont_title">팔리는 제품만</p>
+                    <p class="cont_description">
+                      네이버에서 최근 한달이내 판매이력이 있는 제품정보만
+                      제공합니다.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="contentBox__box">
+                <div class="contentBox__inner">
+                  <img
+                    src="https://cdn-icons-png.flaticon.com/512/1579/1579565.png"
+                    alt="엑셀"
+                    class="cont_icon icon"
+                  />
+                  <div class="contentBox__text">
+                    <p class="cont_title">소싱 후, 바로 작업 가능</p>
+                    <p class="cont_description">
+                      소싱이후의 작업도 품목별로 진행 가능하도록 이후
+                      프로세스까지 고려
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+
+        <section id="sec3" class="section">
+          <div class="headline">왜? 오토소싱이 빠르고 정확하고 쉬운가요?</div>
+          <div class="innerBox">
+            <div class="box container">
+              <div class="stepBox">
+                <img
+                  src="https://cdn-icons-png.flaticon.com/512/9163/9163302.png"
+                  alt=""
+                  class="icon"
+                />
+                <p class="stepBox__title">제품 소싱</p>
+              </div>
+              <img
+                src="https://cdn-icons-png.flaticon.com/512/2989/2989988.png"
+                alt="화살표"
+                class="arrow-icon"
+              />
+              <div class="stepBox">
+                <img
+                  src="https://cdn-icons-png.flaticon.com/512/7856/7856072.png"
+                  alt=""
+                  class="icon"
+                />
+                <p class="stepBox__title">업로드</p>
+              </div>
+              <img
+                src="https://cdn-icons-png.flaticon.com/512/2989/2989988.png"
+                alt="화살표"
+                class="arrow-icon"
+              />
+              <div class="stepBox">
+                <img
+                  src="https://cdn-icons-png.flaticon.com/512/2082/2082194.png"
+                  alt=""
+                  class="icon"
+                />
+                <p class="stepBox__title">주문관리</p>
+              </div>
+              <img
+                src="https://cdn-icons-png.flaticon.com/512/2989/2989988.png"
+                alt="화살표"
+                class="arrow-icon"
+              />
+              <div class="stepBox">
+                <img
+                  src="https://cdn-icons-png.flaticon.com/512/8948/8948760.png"
+                  alt=""
+                  class="icon"
+                />
+                <p class="stepBox__title">사후관리/CS</p>
+              </div>
+            </div>
+
+            <div class="handWrite">
+              <p class="handWrite__title">
+                매출을 위해, 업로드와 소싱은 필수!!
+              </p>
+              <p class="handWrite__description">
+                그런데 실제로 제품을 업로드하는데
+              </p>
+
+              <p class="highlight-circle">
+                <span>얼</span><span>마</span><span>나</span> 걸릴까요?
+              </p>
+            </div>
+
+            <div class="box container">
+              <div class="box__cont handWrite">
+                <span class="highlight">100개</span> 품목 기준,
+                <span class="highlight redChar bigChar">6시간</span>
+              </div>
+            </div>
+
+            <div class="handWrite">
+              <p class="handWrite__title">6시간? 그래도 매출이 안나와?!</p>
+              <p class="handWrite__title">저희는 2가지에 집중했습니다.</p>
+            </div>
+
+            <div class="box contentBox">
+              <div class="contentBox__box">
+                <div class="contentBox__inner">
+                  <img
+                    src="   https://cdn-icons-png.flaticon.com/512/1445/1445023.png "
+                    alt="시간"
+                    class="cont_icon icon"
+                  />
+                  <div class="contentBox__text">
+                    <p class="cont_title">시간을 확 줄이고!</p>
+                    <p class="cont_description highlight">
+                      100개 기준, 타오바오 이미지 서칭까지 평균<span>3분</span>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="contentBox__box">
+                <div class="contentBox__inner">
+                  <img
+                    src="   https://cdn-icons-png.flaticon.com/512/1400/1400134.png "
+                    alt="확률"
+                    class="cont_icon icon"
+                  />
+                  <div class="contentBox__text">
+                    <p class="cont_title">팔리는 제품만</p>
+                    <p class="cont_description">
+                      최근 한달 이내 판매이력이 있는 제품만 직접
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section id="sec4" class="section">
+          <div class="innerBox">
+            <div class="headline">써본사람이 직접 느낀 오토소싱 후기</div>
+            <div class="box container"></div>
+          </div>
+        </section>
+      </div>
     </main>
 
     <footer class="footer">
-      <div class="payment-button">
-        <button type="button" class="btn-payment">결제하기</button>
+      <div class="footer__container">
+        <div class="footer__info">
+          <div class="footer__company">
+            <p class="company__name">주식회사 오토엔드</p>
+            <p class="company__ceo">대표이사: 이정재</p>
+          </div>
+          <div class="footer__details">
+            <p>사업자등록번호: 787-86-03393</p>
+            <p>주소: 제주특별자치도 제주시 신대로 145, 2층</p>
+          </div>
+          <p class="footer__copyright">
+            Copyright © 2024 오토엔드 All Rights Reserved.
+          </p>
+        </div>
       </div>
     </footer>
-
-    <div id="imagePopup" class="image-popup">
-      <span class="close-btn">&times;</span>
-      <img id="popupImage" src="" alt="" />
-    </div>
 
     <script src="main.js"></script>
   </body>
