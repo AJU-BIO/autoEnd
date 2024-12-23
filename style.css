@@ -69,6 +69,7 @@
 
 .nav__list {
   display: flex;
+  flex-direction: row;
   gap: 2rem;
   list-style: none;
   padding: 0;
@@ -81,25 +82,31 @@
 }
 
 .hamburger-btn {
-  display: none; /* 기본적으로는 숨김 처리 */
+  display: none;
   width: 40px;
   height: 40px;
-  background: #333;
+  background: transparent;
   border: none;
   border-radius: 8px;
   padding: 8px;
   cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.hamburger-btn:hover {
+  background-color: rgba(0, 0, 0, 0.1);
 }
 
 .hamburger-btn span {
   display: block;
   width: 100%;
   height: 2px;
-  background-color: white;
+  background-color: #333;
   margin: 6px 0;
   border-radius: 2px;
   transition: all 0.3s ease;
 }
+
 .hamburger-btn span:nth-child(1) {
   margin-top: 3px;
 }
@@ -626,7 +633,221 @@ img.icon {
   width: 100%;
 }
 
-/* 반응형 레이아웃을 위한 미디어 쿼리 */
+/* 모달 스타일 */
+.modal-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+}
+
+.modal-image {
+  max-width: 90%;
+  max-height: 90vh;
+  object-fit: contain;
+  cursor: pointer;
+}
+
+.modal-close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 2rem;
+  cursor: pointer;
+  padding: 10px;
+  z-index: 2001;
+}
+
+.modal-close:hover {
+  color: #ccc;
+}
+
+img.clickable {
+  cursor: pointer;
+}
+
+.footer {
+  background-color: #e6e6e6;
+  padding: 40px 0;
+  margin-top: 60px;
+}
+
+.footer__container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.footer__info {
+  color: #6c757d;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.footer__company {
+  margin-bottom: 15px;
+}
+
+.company__name {
+  font-weight: bold;
+  color: #495057;
+}
+
+.footer__details {
+  margin-bottom: 15px;
+}
+
+.footer__copyright {
+  border-top: 1px solid #dee2e6;
+  padding-top: 15px;
+  margin-top: 15px;
+  font-size: 13px;
+}
+
+.buybtn__link {
+  transition: all 0.3s ease;
+}
+
+.header__nav {
+  display: block;
+}
+
+.header__nav.active {
+  display: block;
+  position: absolute;
+  top: 70px;
+  left: 0;
+  width: 100%;
+  background: white;
+  padding: 1rem;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  z-index: 999;
+}
+
+.header__nav.active .nav__list {
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.header__nav.active .nav__item {
+  width: 100%;
+  text-align: center;
+  padding: 0.5rem 0;
+}
+
+.header__nav.active .nav__item a {
+  display: block;
+  width: 100%;
+  padding: 0.5rem 0;
+}
+
+.nav__list {
+  flex-direction: row;
+  gap: 1rem;
+}
+
+.typing {
+  min-height: 1.2em; /* 또는 실제 텍스트 높이에 맞는 값 */
+  display: inline-block;
+  min-width: 6em; /* 가장 긴 텍스트를 수용할 수 있는 너비 */
+  color: yellow;
+  letter-spacing: 0.2em;
+}
+
+/* 햄버거 버튼 기본 스타일 수정 */
+.hamburger-btn {
+  display: none;
+  width: 40px;
+  height: 40px;
+  background: transparent;
+  border: none;
+  border-radius: 8px;
+  padding: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.hamburger-btn:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+/* 햄버거 버튼 내부 라인 스타일 */
+.hamburger-btn span {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: #333;
+  margin: 6px 0;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+/* 모바일 메뉴 활성화 시 햄버거 버튼 애니메이션 */
+.hamburger-btn.active span:nth-child(1) {
+  transform: rotate(45deg) translate(6px, 6px);
+}
+
+.hamburger-btn.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger-btn.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(6px, -6px);
+}
+
+/* 모바일 네비게이션 메뉴 스타일 */
+.header__nav.active {
+  display: block;
+  position: absolute;
+  top: 70px;
+  left: 0;
+  width: 100%;
+  background: white;
+  padding: 1rem;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  z-index: 999;
+}
+
+.header__nav.active .nav__list {
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.header__nav.active .nav__item {
+  width: 100%;
+  text-align: center;
+  padding: 0.5rem 0;
+}
+
+.header__nav.active .nav__item a {
+  display: block;
+  width: 100%;
+  padding: 0.5rem 0;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+* 반응형 레이아웃을 위한 미디어 쿼리 */
 /* 반응형 레이아웃을 위한 미디어 쿼리 */
 /* 데스크톱 (1200px 이상) */
 @media (min-width: 1200px) {
@@ -682,8 +903,21 @@ img.icon {
   }
 }
 
+/* 반응형 스타일 */
+
 /* 모바일 환경을 위한 미디어 쿼리 추가 */
 @media screen and (max-width: 768px) {
+  .header__nav {
+    display: none;
+  }
+
+  .hamburger-btn {
+    display: block;
+  }
+
+  .box.review {
+    min-width: 250px;
+  }
   #intro {
     min-height: auto; /* 수정 */
     padding-bottom: 80px; /* 모바일에서 더 큰 하단 여백 */
@@ -841,95 +1075,4 @@ img.icon {
   #sec3 .box.container > .stepBox > .stepBox__title {
     font-size: 0.66rem;
   }
-}
-
-/* 반응형 스타일 */
-@media (max-width: 768px) {
-  .box.review {
-    min-width: 250px;
-  }
-}
-
-/* 모달 스타일 */
-.modal-container {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.8);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 2000;
-}
-
-.modal-image {
-  max-width: 90%;
-  max-height: 90vh;
-  object-fit: contain;
-  cursor: pointer;
-}
-
-.modal-close {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  background: none;
-  border: none;
-  color: white;
-  font-size: 2rem;
-  cursor: pointer;
-  padding: 10px;
-  z-index: 2001;
-}
-
-.modal-close:hover {
-  color: #ccc;
-}
-
-img.clickable {
-  cursor: pointer;
-}
-
-.footer {
-  background-color: #e6e6e6;
-  padding: 40px 0;
-  margin-top: 60px;
-}
-
-.footer__container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
-}
-
-.footer__info {
-  color: #6c757d;
-  font-size: 14px;
-  line-height: 1.6;
-}
-
-.footer__company {
-  margin-bottom: 15px;
-}
-
-.company__name {
-  font-weight: bold;
-  color: #495057;
-}
-
-.footer__details {
-  margin-bottom: 15px;
-}
-
-.footer__copyright {
-  border-top: 1px solid #dee2e6;
-  padding-top: 15px;
-  margin-top: 15px;
-  font-size: 13px;
-}
-
-.buybtn__link {
-  transition: all 0.3s ease;
 }

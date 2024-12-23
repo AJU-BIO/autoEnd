@@ -122,4 +122,54 @@ document.addEventListener("DOMContentLoaded", () => {
       buyButton.style.border = "1px solid #0066ff";
     }
   });
+
+  // 햄버거 메뉴 기능 수정
+  const hamburgerBtn = document.querySelector(".hamburger-btn");
+  const nav = document.querySelector(".header__nav");
+
+  hamburgerBtn.addEventListener("click", () => {
+    hamburgerBtn.classList.toggle("active"); // 햄버거 버튼 상태 토글
+    nav.classList.toggle("active"); // 네비게이션 메뉴 토글
+
+    // 메뉴가 열려있을 때 외부 클릭시 닫기
+    if (nav.classList.contains("active")) {
+      document.addEventListener("click", function closeMenu(e) {
+        if (!nav.contains(e.target) && !hamburgerBtn.contains(e.target)) {
+          nav.classList.remove("active");
+          hamburgerBtn.classList.remove("active");
+          document.removeEventListener("click", closeMenu);
+        }
+      });
+    }
+  });
+
+  // 타이핑 효과
+  const texts = ["오토소싱", "오토엔드"];
+  let textIndex = 0;
+  const typingElement = document.querySelector(".typing");
+  let charIndex = 0;
+  let isDeleting = false;
+
+  function typing() {
+    const currentText = texts[textIndex];
+    const displayText = currentText.substring(0, charIndex);
+    typingElement.textContent = displayText;
+
+    if (!isDeleting && charIndex === currentText.length) {
+      // 타이핑 완료, 1.5초 후 삭제 시작
+      setTimeout(() => (isDeleting = true), 1500);
+    } else if (isDeleting && charIndex === 0) {
+      // 삭제 완료, 다음 텍스트로 전환
+      isDeleting = false;
+      textIndex = (textIndex + 1) % texts.length;
+      setTimeout(typing, 500);
+      return;
+    }
+
+    charIndex = isDeleting ? charIndex - 1 : charIndex + 1;
+    const speed = isDeleting ? 100 : 200;
+    setTimeout(typing, speed);
+  }
+
+  typing();
 });
