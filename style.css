@@ -1065,6 +1065,15 @@ img.clickable {
   #sec3 .box.container > .stepBox > .stepBox__title {
     font-size: 0.8rem;
   }
+
+  .header__left {
+    gap: 0.6rem;
+  }
+
+  #buy {
+    font-size: 0.88rem;
+    padding: 10px 10px;
+  }
 }
 
 @media (max-width: 400px) {
@@ -1074,5 +1083,10 @@ img.clickable {
 
   #sec3 .box.container > .stepBox > .stepBox__title {
     font-size: 0.66rem;
+  }
+
+  #buy {
+    font-size: 0.77rem;
+    padding: 10px 10px;
   }
 }
