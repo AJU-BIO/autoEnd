@@ -1,10 +1,10 @@
-@font-face {
-  font-family: "TmonMonsori";
+/* @font-face {
+  font-family: "GMarketSansMedium";
   src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff")
     format("woff");
   font-weight: normal;
   font-style: normal;
-}
+} */
 
 @font-face {
   font-family: "TmonMonsori";
@@ -58,6 +58,10 @@ p {
   height: 40px;
   border-radius: 50%;
   object-fit: cover;
+}
+
+.handWrite__title {
+  margin-top: 20px;
 }
 
 .header__left {
@@ -1326,6 +1330,26 @@ img.clickable {
     flex-direction: column;
     align-items: normal;
   }
+
+  #sec3 .handWrite__title {
+    font-size: 1.5rem;
+  }
+
+  #sec3 .innerBox > .handWrite > .handWrite__description {
+    font-size: 1.2rem;
+  }
+
+  #sec3 .highlight {
+    font-size: 1.5rem;
+  }
+
+  #sec3 .highlight.bigChar {
+    font-size: 2rem;
+  }
+
+  #sec3 .handWrite {
+    font-size: 1.5rem;
+  }
 }
 
 @media (max-width: 400px) {
@@ -1340,6 +1364,25 @@ img.clickable {
   #buy {
     font-size: 0.77rem;
     padding: 10px 10px;
+  }
+
+  #sec3 .highlight.bigChar {
+    font-size: 1.2rem;
+  }
+
+  #sec3 .handWrite__title {
+    font-size: 1.15rem;
+  }
+
+  #sec3 .innerBox > .handWrite > .handWrite__description {
+    font-size: 1rem;
+  }
+
+  #sec3 .highlight {
+    font-size: 0.98rem;
+  }
+  #sec3 .box__cont.handWrite {
+    font-size: 1rem;
   }
 }
 
