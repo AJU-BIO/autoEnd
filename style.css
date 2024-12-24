@@ -202,6 +202,7 @@ main {
   display: flex;
   flex-direction: row;
   justify-content: center;
+
   gap: 3rem;
   margin: 10px;
 }
@@ -217,7 +218,7 @@ main {
   justify-content: center;
   text-align: center;
   padding: 10px;
-  font-size: 0.9rem;
+  font-size: 1.2rem;
   max-width: 120px;
   aspect-ratio: 1;
 }
@@ -295,6 +296,19 @@ main {
   font-size: 1.2rem;
 }
 
+#intro .box__container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  /* border: 1px solid #ccc; */
+  gap: 2rem;
+}
+
+#intro .box__container > .box {
+  width: 100%;
+  /* border: 1px solid #ccc; */
+}
+
 .box__container {
   display: flex;
   flex-direction: row;
@@ -368,7 +382,7 @@ img {
   flex-direction: row;
   justify-content: center;
   gap: 2rem;
-  margin-top: 30px;
+  margin-top: 50px;
 }
 
 #sec2 .contentBox > .contentBox__box {
@@ -392,6 +406,10 @@ img {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+}
+
+.review__img {
+  border-radius: 20px;
 }
 
 #sec2 .contentBox > .contentBox__box > .contentBox__inner {
@@ -600,8 +618,9 @@ img.icon {
   max-width: 400px;
   width: 350px;
   height: 350px;
-  padding: 20px;
+  padding: 30px;
   background: #fff;
+  border: 1px solid #ddd;
   border-radius: 10px;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
   text-align: center;
@@ -609,6 +628,8 @@ img.icon {
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 .box.review:hover {
@@ -630,6 +651,8 @@ img.icon {
   margin-bottom: 10px;
   color: #333;
   width: 100%;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #ccc;
 }
 
 .review__description {
@@ -915,7 +938,7 @@ img.clickable {
   transform: rotate(-45deg) translate(6px, -6px);
 }
 
-/* 모���일 네비게이션 메뉴 스타일 */
+/* 모바일 네비게이션 메뉴 스타일 */
 .header__nav.active {
   display: block;
   position: absolute;
@@ -957,29 +980,96 @@ img.clickable {
   }
 }
 
-* 반응형 레이아웃을 위한 미디어 쿼리 */
-/* 반응형 레이아웃을 위한 미디어 쿼리 */
 /* 데스크톱 (1200px 이상) */
 /* @media screen and (min-width: 1200px) {
   html {
     font-size: 24px; /* 기본 크기 설정 */
-  /* }
-} */ */
-
+/* }
+} */
 @media screen and (min-width: 1200px) {
-  :root {
-    font-size: 24px; /* !important 제거 */
+  html {
+    font-size: 24px;
   }
 
-  /* 절대 단위를 사용하는 요소들은 별도로 조정 */
+  /* 기존 고정 폰트 크기를 사용하는 요소들을 상대 단위로 변경 */
   .header__title {
-    font-size: 1.5rem; /* px 대신 rem 사용 */
+    font-size: 1.5rem;
   }
 
-  .box__description {
-    font-size: 0.88rem; /* px 대신 rem 사용 */
+  .bigChar p {
+    font-size: 2.5rem;
   }
-  /* 기타 필요한 요소들에 대해 rem 단위 적용 */
+
+  .handWrite {
+    font-size: 2rem;
+  }
+
+  #intro .recommendBox {
+    gap: 6rem;
+  }
+
+  .recommendBox .innerList {
+    flex: 1;
+    width: 200px !important;
+    height: 200px;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+
+    padding: 10px;
+    font-size: 1.2rem;
+    max-width: 200px;
+    aspect-ratio: 1;
+  }
+
+  #intro .box__description {
+    font-size: 0.88rem;
+  }
+
+  #sec2 .contentBox > .contentBox__box > .contentBox__inner {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 20px;
+  }
+
+  #sec2 .contentBox__text > .cont_title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    padding: 10px 0;
+    text-align: center;
+    border-bottom: 1px solid #ccc;
+  }
+
+  #sec2 .contentBox__text > .cont_description {
+    font-size: 0.88rem;
+    text-align: center;
+    padding: 10px 0;
+  }
+
+  .box.review {
+    height: 550px;
+    width: 450px;
+    min-width: 350px;
+    max-width: 500px;
+    gap: 20px;
+  }
+
+  .review__title {
+    font-size: 0.98rem;
+  }
+
+  .review__description {
+    font-size: 0.88rem;
+    bottom: 0;
+  }
+
+  .review__img {
+    height: 300px;
+  }
+
+  #buy {
+    font-size: 0.9rem;
+  }
 }
 
 /* 태블릿 (768px - 1199px) */
@@ -990,6 +1080,9 @@ img.clickable {
     justify-content: center;
   }
 
+  .header__container {
+    font-size: 1.2rem;
+  }
   .centerBox {
     max-width: 70%;
   }

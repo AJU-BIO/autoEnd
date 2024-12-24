@@ -119,7 +119,7 @@ document.addEventListener("DOMContentLoaded", () => {
     } else {
       buyButton.style.background = ""; // 원래 스타일로 복구
       buyButton.style.color = "";
-      buyButton.style.border = "1px solid #0066ff";
+      buyButton.style.border = "1px solid #ccc";
     }
   });
 
