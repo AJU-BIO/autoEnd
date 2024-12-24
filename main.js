@@ -144,32 +144,62 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   // 타이핑 효과
-  const texts = ["오토소싱", "오토엔드"];
+  const prefix = "오토";
+  const texts = ["소싱", "엔드"];
   let textIndex = 0;
   const typingElement = document.querySelector(".typing");
   let charIndex = 0;
   let isDeleting = false;
+  let cursorVisible = true;
+
+  // 커서 깜빡임 효과
+  function toggleCursor() {
+    cursorVisible = !cursorVisible;
+    updateText();
+  }
+
+  // 텍스트 업데이트 함수
+  function updateText() {
+    const cursor = cursorVisible ? "|" : "";
+    const currentText = texts[textIndex];
+    const displayText = currentText.substring(0, charIndex);
+    typingElement.textContent = prefix + displayText + cursor;
+  }
 
   function typing() {
     const currentText = texts[textIndex];
-    const displayText = currentText.substring(0, charIndex);
-    typingElement.textContent = displayText;
 
-    if (!isDeleting && charIndex === currentText.length) {
-      // 타이핑 완료, 1.5초 후 삭제 시작
-      setTimeout(() => (isDeleting = true), 1500);
-    } else if (isDeleting && charIndex === 0) {
-      // 삭제 완료, 다음 텍스트로 전환
-      isDeleting = false;
-      textIndex = (textIndex + 1) % texts.length;
-      setTimeout(typing, 500);
-      return;
+    if (!isDeleting) {
+      // 타이핑 중
+      if (charIndex < currentText.length) {
+        charIndex++;
+        updateText();
+        setTimeout(typing, 300);
+      } else {
+        // 타이핑 완료, 2초 후 삭제 시작
+        setTimeout(() => {
+          isDeleting = true;
+          typing();
+        }, 2000);
+      }
+    } else {
+      // 삭제 중
+      if (charIndex > 0) {
+        charIndex--;
+        updateText();
+        setTimeout(typing, 200);
+      } else {
+        // 삭제 완료, 다음 텍스트로 전환
+        isDeleting = false;
+        textIndex = (textIndex + 1) % texts.length;
+        setTimeout(typing, 500);
+      }
     }
-
-    charIndex = isDeleting ? charIndex - 1 : charIndex + 1;
-    const speed = isDeleting ? 100 : 200;
-    setTimeout(typing, speed);
   }
 
+  // 커서 깜빡임 시작
+  setInterval(toggleCursor, 500);
+
+  // 타이핑 시작
   typing();
 });

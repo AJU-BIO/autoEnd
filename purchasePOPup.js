@@ -65,16 +65,68 @@ function createPurchaseModal() {
 
   modalContainer
     .querySelector("#purchaseForm")
-    .addEventListener("submit", (e) => {
+    .addEventListener("submit", async (e) => {
       e.preventDefault();
-      const agreement = document.querySelector("#agreement").value;
-      if (agreement !== "동의") {
-        alert("개인정보 수집에 동의해주세요.");
+
+      // 제출 버튼 찾기
+      const submitButton = e.target.querySelector('button[type="submit"]');
+
+      // 버튼 비활성화 및 스타일 변경
+      submitButton.disabled = true;
+      submitButton.style.backgroundColor = "#ccc";
+      submitButton.textContent = "신청 중...";
+
+      const name = document.querySelector("#name").value.trim();
+      const phone = document.querySelector("#phone").value.trim();
+      const email = document.querySelector("#email").value.trim();
+      const agreement = document.querySelector("#agreement").value.trim();
+
+      // 유효성 검사
+      if (!name) {
+        showAlertModal("이름을 입력해주세요.");
         return;
       }
-      // 여기에 폼 제출 로직 추가
-      alert("신청이 완료되었습니다.");
-      modalContainer.remove();
+      if (!phone) {
+        showAlertModal("핸드폰번호를 입력해주세요.");
+        return;
+      }
+      if (!email) {
+        showAlertModal("이메일을 입력해주세요.");
+        return;
+      }
+      if (agreement !== "동의") {
+        showAlertModal("개인정보 수집에 동의해주세요.");
+        return;
+      }
+
+      try {
+        const formData = {
+          name: name,
+          phone: phone,
+          email: email,
+          agreement: agreement,
+        };
+
+        const response = await fetch(submitURL, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/x-www-form-urlencoded",
+          },
+          body: JSON.stringify(formData),
+        });
+
+        const data = await response.json();
+        showAlertModal(data.message);
+        modalContainer.remove();
+      } catch (error) {
+        console.error("Error:", error);
+        showAlertModal("신청 중 오류가 발생했습니다. 다시 시도해주세요.");
+
+        // 에러 발생 시 버튼 다시 활성화
+        submitButton.disabled = false;
+        submitButton.style.backgroundColor = ""; // 원래 색상으로 복구
+        submitButton.textContent = "신청하기";
+      }
     });
 
   document.body.appendChild(modalContainer);
@@ -88,3 +140,16 @@ document.querySelector("#buy").addEventListener("click", (e) => {
 
 const submitURL =
   "https://script.google.com/macros/s/AKfycbxWGfR-1MvJQ0jBnPQhF5NIEHRt4HjyPDiAzF8QsEbZo4vGXF2N6ms9srhal6eVROI/exec";
+
+// 알림 모달 표시 함수 추가
+function showAlertModal(message) {
+  const template = document.querySelector("#alertModal");
+  const modal = template.content.cloneNode(true);
+
+  modal.querySelector(".modal__message").textContent = message;
+  modal.querySelector(".modal__close").addEventListener("click", () => {
+    document.querySelector(".modal").remove();
+  });
+
+  document.body.appendChild(modal);
+}
