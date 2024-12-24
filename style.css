@@ -1,6 +1,14 @@
 @font-face {
-  font-family: "GmarketSansMedium";
+  font-family: "TmonMonsori";
   src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "TmonMonsori";
+  src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/TmonMonsori.woff")
     format("woff");
   font-weight: normal;
   font-style: normal;
@@ -177,13 +185,13 @@ main {
 }
 
 .handWrite {
-  font-family: "Nanum Brush Script";
+  font-family: "TmonMonsori";
   font-size: 2rem;
   line-height: 1.5;
 }
 
 .handWrite * {
-  font-family: "Nanum Brush Script";
+  font-family: "TmonMonsori";
   font-size: 2rem;
   line-height: 1.5;
 }
@@ -214,6 +222,8 @@ main {
   background-color: rgba(255, 255, 255, 0.2);
   border-radius: 50%;
   display: flex;
+  font-family: "TmonMonsori";
+  /* font-weight: 100; */
   align-items: center;
   justify-content: center;
   text-align: center;
@@ -265,7 +275,7 @@ main {
 }
 
 .section .headline {
-  font-family: "GmarketSansMedium";
+  font-family: "TmonMonsori";
   font-size: 2rem;
   text-align: center;
   margin-top: 30px;
@@ -283,7 +293,7 @@ main {
 }
 
 #sec1 .box.big .box__title {
-  font-family: "GmarketSansMedium";
+  font-family: "TmonMonsori";
   font-size: 3rem;
   text-align: center;
   padding-bottom: 1px;
@@ -1045,6 +1055,7 @@ img.clickable {
     font-size: 0.88rem;
     text-align: center;
     padding: 10px 0;
+    height: 100px;
   }
 
   .box.review {
