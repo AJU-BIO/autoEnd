@@ -18,6 +18,105 @@
   --pointColor: #0000b9;
 }
 
+/* 폰트 패밀리 */
+.ff-tmon {
+  font-family: "TmonMonsori";
+}
+.ff-noto {
+  font-family: "Noto Sans KR", sans-serif;
+}
+
+/* 폰트 사이즈 - 데스크탑 기준 (1200px 이상) */
+.fsz-xlg {
+  font-size: 3rem;
+} /* 48px */
+.fsz-lg {
+  font-size: 2rem;
+} /* 32px */
+.fsz-md {
+  font-size: 1.5rem;
+} /* 24px */
+.fsz-base {
+  font-size: 1rem;
+} /* 16px */
+.fsz-sm {
+  font-size: 0.875rem;
+} /* 14px */
+.fsz-xsm {
+  font-size: 0.75rem;
+} /* 12px */
+
+/* 폰트 웨이트 */
+.fw-thin {
+  font-weight: 100;
+}
+.fw-light {
+  font-weight: 300;
+}
+.fw-regular {
+  font-weight: 400;
+}
+.fw-medium {
+  font-weight: 500;
+}
+.fw-bold {
+  font-weight: 700;
+}
+.fw-black {
+  font-weight: 900;
+}
+
+/* 태블릿 (768px - 1199px) */
+@media screen and (max-width: 1199px) {
+  .fsz-xlg {
+    font-size: 2.5rem;
+  }
+  .fsz-lg {
+    font-size: 1.75rem;
+  }
+  .fsz-md {
+    font-size: 1.25rem;
+  }
+}
+
+/* 모바일 (500px - 767px) */
+@media screen and (max-width: 767px) {
+  .fsz-xlg {
+    font-size: 2rem;
+  }
+  .fsz-lg {
+    font-size: 1.5rem;
+  }
+  .fsz-md {
+    font-size: 1.125rem;
+  }
+  .fsz-base {
+    font-size: 0.9375rem;
+  }
+}
+
+/* 모바일 소형 (500px 이하) */
+@media screen and (max-width: 500px) {
+  .fsz-xlg {
+    font-size: 1.75rem;
+  }
+  .fsz-lg {
+    font-size: 1.25rem;
+  }
+  .fsz-md {
+    font-size: 1rem;
+  }
+  .fsz-base {
+    font-size: 0.875rem;
+  }
+  .fsz-sm {
+    font-size: 0.75rem;
+  }
+  .fsz-xsm {
+    font-size: 0.675rem;
+  }
+}
+
 p {
   word-break: keep-all;
   overflow-wrap: break-word;
@@ -269,7 +368,7 @@ main {
 }
 
 .box__description {
-  font-size: 0.88rem;
+  /* font-size: 0.88rem; */
   line-height: 1.5;
   text-align: center;
 }
@@ -284,6 +383,9 @@ main {
   text-align: center;
   margin-top: 30px;
   margin-bottom: 20px;
+  word-break: keep-all;
+  overflow-wrap: break-word;
+  white-space: normal;
 }
 
 #sec1 .box.big {
@@ -487,7 +589,7 @@ img.icon {
 }
 
 #sec3 .innerBox > .box.container {
-  margin-top: 50px;
+  margin-top: 15px;
   display: flex;
   align-items: center;
   justify-content: space-around;
@@ -1036,9 +1138,9 @@ img.clickable {
     aspect-ratio: 1;
   }
 
-  #intro .box__description {
+  /* #intro .box__description {
     font-size: 0.88rem;
-  }
+  } */
 
   #sec2 .contentBox > .contentBox__box > .contentBox__inner {
     flex-direction: column;
@@ -1198,7 +1300,8 @@ img.clickable {
     height: 150px;
     max-width: 150px;
 
-    font-size: 1.2rem;
+    font-size: 1.6rem;
+    padding-top: 0.8rem;
   }
   #sec1 .box__container {
     flex-direction: column;
@@ -1371,18 +1474,29 @@ img.clickable {
   }
 
   #sec3 .handWrite__title {
-    font-size: 1.15rem;
+    font-size: 1.3rem;
   }
 
   #sec3 .innerBox > .handWrite > .handWrite__description {
-    font-size: 1rem;
+    font-size: 1.2rem;
   }
 
-  #sec3 .highlight {
+  /* #sec3 .highlight {
     font-size: 0.98rem;
   }
   #sec3 .box__cont.handWrite {
     font-size: 1rem;
+  } */
+
+  .handWrite * {
+    font-family: "Noto Sans KR", sans-serif;
+    font-weight: 800;
+  }
+
+  #sec3 .box__cont.handWrite * {
+    font-family: "TmonMonsori", sans-serif;
+
+    font-size: 2rem;
   }
 }
 
