@@ -1086,6 +1086,14 @@ img.clickable {
   padding: 0.5rem 0;
 }
 
+#sec5 {
+  background-color: #fff;
+}
+
+#sec5 iframe {
+  border-radius: 10px;
+}
+
 @keyframes slideDown {
   from {
     opacity: 0;
