@@ -81,21 +81,31 @@ function createPurchaseModal() {
       const email = document.querySelector("#email").value.trim();
       const agreement = document.querySelector("#agreement").value.trim();
 
-      // 유효성 검사
+      // 유효성 검사 함수
+      const resetButton = () => {
+        submitButton.disabled = false;
+        submitButton.style.backgroundColor = "";
+        submitButton.textContent = "신청하기";
+      };
+
       if (!name) {
         showAlertModal("이름을 입력해주세요.");
+        resetButton();
         return;
       }
       if (!phone) {
         showAlertModal("핸드폰번호를 입력해주세요.");
+        resetButton();
         return;
       }
       if (!email) {
         showAlertModal("이메일을 입력해주세요.");
+        resetButton();
         return;
       }
       if (agreement !== "동의") {
-        showAlertModal("개인정보 수집에 동의해주세요.");
+        showAlertModal("동의를 입력해주세요.");
+        resetButton();
         return;
       }
 
