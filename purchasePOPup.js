@@ -48,6 +48,17 @@ function createPurchaseModal() {
                     <input type="text" id="agreement" placeholder="'동의'를 입력해주세요" required>
                 </div>
                 
+                <div class="headline">신청 전 체크리스트 (동의 시, 체크)</div>
+                <div class="input-group checklist-box">
+                    <div class="checklist-box">
+                        <div class="checklist-item">
+                            <label for="check1">오토소싱은 1년 라이선스 구매로 진행되며, 구매 환불 불가. (단, 불가피한 사정시 1회에 한하여 승계가능)</label>
+                            <input type="checkbox" id="check1" required>
+                        </div>
+                        <!-- 나머지 4개의 체크박스 항목도 여기에 추가 -->
+                    </div>
+                </div>
+                
                 <div class="button-group">
                     <button type="submit">신청하기</button>
                     <button type="button" class="close-modal">취소</button>
@@ -68,6 +79,18 @@ function createPurchaseModal() {
     .addEventListener("submit", async (e) => {
       e.preventDefault();
 
+      // 체크리스트 검증
+      const checkboxes = document.querySelectorAll(
+        '.checklist-item input[type="checkbox"]'
+      );
+      for (let checkbox of checkboxes) {
+        if (!checkbox.checked) {
+          showAlertModal("모든 항목에 동의하지 않을 경우, 신청이 불가합니다.");
+          resetButton();
+          return;
+        }
+      }
+
       // 제출 버튼 찾기
       const submitButton = e.target.querySelector('button[type="submit"]');
 
@@ -80,6 +103,19 @@ function createPurchaseModal() {
       const phone = document.querySelector("#phone").value.trim();
       const email = document.querySelector("#email").value.trim();
       const agreement = document.querySelector("#agreement").value.trim();
+
+      // 데이터 객체 생성
+      const submitData = {
+        name,
+        phone,
+        email,
+        agreement,
+      };
+
+      // 체크리스트 항목 추가
+      checkboxes.forEach((checkbox, index) => {
+        submitData[`checklist_${index + 1}`] = checkbox.checked;
+      });
 
       // 유효성 검사 함수
       const resetButton = () => {
@@ -110,32 +146,25 @@ function createPurchaseModal() {
       }
 
       try {
-        const formData = {
-          name: name,
-          phone: phone,
-          email: email,
-          agreement: agreement,
-        };
-
         const response = await fetch(submitURL, {
           method: "POST",
           headers: {
             "Content-Type": "application/x-www-form-urlencoded",
           },
-          body: JSON.stringify(formData),
+          body: JSON.stringify(submitData),
         });
+
+        if (!response.ok) {
+          throw new Error("Network response was not ok");
+        }
 
         const data = await response.json();
         showAlertModal(data.message);
         modalContainer.remove();
       } catch (error) {
         console.error("Error:", error);
-        showAlertModal("신청 중 오류가 발생했습니다. 다시 시도해주세요.");
-
-        // 에러 발생 시 버튼 다시 활성화
-        submitButton.disabled = false;
-        submitButton.style.backgroundColor = ""; // 원래 색상으로 복구
-        submitButton.textContent = "신청하기";
+        showAlertModal("오류가 발생했습니다. 다시 시도해주세요.");
+        resetButton();
       }
     });
 
