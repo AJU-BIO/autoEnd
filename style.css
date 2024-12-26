@@ -1547,3 +1547,37 @@ img.clickable {
 .modal__close:hover {
   background: #0056b3;
 }
+
+/* 400px 이하 화면에서의 스타일 수정 */
+@media (max-width: 400px) {
+  /* 컨테이너 패딩 조정 */
+  #sec3 .box.container {
+    padding: 10px 5px; /* 패딩 축소 */
+    width: 100%;
+    gap: 2px; /* 요소 간 간격 축소 */
+  }
+
+  /* stepBox 크기 조정 */
+  #sec3 .box.container > .stepBox {
+    padding: 5px; /* 패딩 축소 */
+    min-width: auto; /* 최소 너비 제거 */
+  }
+
+  /* 아이콘 크기 더 축소 */
+  #sec3 .stepBox > img.icon {
+    width: 24px; /* 아이콘 크기 축소 */
+    height: 24px;
+  }
+
+  /* 화살표 아이콘 조정 */
+  #sec3 .arrow-icon {
+    width: 8px;
+    margin: 0 2px; /* 좌우 여백 축소 */
+  }
+
+  /* 텍스트 크기 조정 */
+  #sec3 .box.container > .stepBox > .stepBox__title {
+    font-size: 0.6rem;
+    margin-top: 5px;
+  }
+}
