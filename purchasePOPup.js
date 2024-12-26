@@ -4,26 +4,34 @@ function createPurchaseModal() {
   modalContainer.className = "modal-container";
 
   // 모달 내용
+
+  const checkList = [
+    "오토소싱은 1년 라이선스 구매로 진행되며, 구매 환불 불가. (단, 불가피한 사정시 1회에 한하여 승계가능)",
+    "오토소싱을 재판매하지 않을 것이며, 재판매할 경우, 민형사상의 불이익을 받을 수 있습니다.",
+    "오토소싱에 대해 문제점이 있을 경우, 알려주세요~",
+    "수익 많이 나면.. 알죠?",
+  ];
+
   const modalContent = `
         <div class="modal-content">
-            <h2>구매 신청</h2>
+            <h2 class="fsz-lg">구매 신청</h2>
             <form id="purchaseForm">
-                <div class="input-group">
+                <div class="input-group fsz-md">
                     <label for="name">이름</label>
                     <input type="text" id="name" required>
                 </div>
                 
-                <div class="input-group">
+                <div class="input-group fsz-md">
                     <label for="phone">핸드폰번호</label>
                     <input type="tel" id="phone" required>
                 </div>
                 
-                <div class="input-group">
+                <div class="input-group fsz-md">
                     <label for="email">이메일주소</label>
                     <input type="email" id="email" required>
-                </div>
+                </div> 
                 
-                <div class="input-group">
+                <div class="input-group fsz-md"> 
                     <label>개인정보 수집 및 이용 동의</label>
                     <div class="terms-box">
                         <div class="terms-content">
@@ -48,13 +56,19 @@ function createPurchaseModal() {
                     <input type="text" id="agreement" placeholder="'동의'를 입력해주세요" required>
                 </div>
                 
-                <div class="headline">신청 전 체크리스트 (동의 시, 체크)</div>
+                <div class="headline fsz-md">신청 전 체크리스트 <span class="fsz-sm">(동의 시, 체크)</span></div>
                 <div class="input-group checklist-box">
                     <div class="checklist-box">
-                        <div class="checklist-item">
-                            <label for="check1">오토소싱은 1년 라이선스 구매로 진행되며, 구매 환불 불가. (단, 불가피한 사정시 1회에 한하여 승계가능)</label>
-                            <input type="checkbox" id="check1" required>
-                        </div>
+                        ${checkList
+                          .map(
+                            (item, index) => `<div class="checklist-item">
+                            <label for="check${index + 1}">${item}</label>
+                            <input type="checkbox" id="check${
+                              index + 1
+                            }" required>
+                        </div>`
+                          )
+                          .join("\n")}
                         <!-- 나머지 4개의 체크박스 항목도 여기에 추가 -->
                     </div>
                 </div>
