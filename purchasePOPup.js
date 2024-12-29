@@ -6,32 +6,33 @@ function createPurchaseModal() {
   // 모달 내용
 
   const checkList = [
-    "오토소싱은 1년 라이선스 구매로 진행되며, 구매 환불 불가. (단, 불가피한 사정시 1회에 한하여 승계가능)",
-    "오토소싱을 재판매하지 않을 것이며, 재판매할 경우, 민형사상의 불이익을 받을 수 있습니다.",
-    "오토소싱에 대해 문제점이 있을 경우, 알려주세요~",
-    "수익 많이 나면.. 알죠?",
+    "1. 오토소싱은 1년 라이선스제로, 구매 후 환불이 불가하며, 라이선스 승계는 1회만 가능합니다.",
+    "2. 오토소싱은 브랜드 및 지재권 확인 기능이 없으니, 금지어를 참고해 사용자가 직접 판단해야 합니다.",
+    "3. 자동 생성된 상품명은 검토가 필요하며, 무게(배송비)는 직접 입력해야 합니다.",
+    "4. 기술적 문제로 일주일 이상 서비스 불가 시, 세팅비(10만원)와 사용료를 일할 계산하여 전액 환불됩니다.",
+    "5. 1인 1라이선스 사용 원칙이며, 무단 배포 및 공동 사용 시 법적 책임이 발생할 수 있습니다.",
   ];
 
   const modalContent = `
         <div class="modal-content">
             <h2 class="fsz-lg">구매 신청</h2>
             <form id="purchaseForm">
-                <div class="input-group fsz-md">
+                <div class="input-group fsz-sm">
                     <label for="name">이름</label>
                     <input type="text" id="name" required>
                 </div>
                 
-                <div class="input-group fsz-md">
+                <div class="input-group fsz-sm">
                     <label for="phone">핸드폰번호</label>
                     <input type="tel" id="phone" required>
                 </div>
                 
-                <div class="input-group fsz-md">
+                <div class="input-group fsz-sm">
                     <label for="email">이메일주소</label>
                     <input type="email" id="email" required>
                 </div> 
                 
-                <div class="input-group fsz-md"> 
+                <div class="input-group fsz-sm"> 
                     <label>개인정보 수집 및 이용 동의</label>
                     <div class="terms-box">
                         <div class="terms-content">
@@ -56,7 +57,7 @@ function createPurchaseModal() {
                     <input type="text" id="agreement" placeholder="'동의'를 입력해주세요" required>
                 </div>
                 
-                <div class="headline fsz-md">신청 전 체크리스트 <span class="fsz-sm">(동의 시, 체크)</span></div>
+                <div class="headline fsz-sm">신청 전 체크리스트 <span class="fsz-sm">(동의 시, 체크)</span></div>
                 <div class="input-group checklist-box">
                     <div class="checklist-box">
                         ${checkList
