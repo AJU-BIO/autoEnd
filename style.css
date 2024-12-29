@@ -20,7 +20,7 @@
 
 /* 폰트 패밀리 */
 .ff-tmon {
-  font-family: "TmonMonsori";
+  font-family: "TmonMonsori" !important;
 }
 .ff-noto {
   font-family: "Noto Sans KR", sans-serif;
@@ -1088,10 +1088,16 @@ img.clickable {
 
 #sec5 {
   background-color: #fff;
+  padding: 0 0 40px 0;
 }
 
 #sec5 iframe {
   border-radius: 10px;
+}
+
+#sec5 .box.container {
+  flex-direction: column;
+  align-items: center;
 }
 
 @keyframes slideDown {
