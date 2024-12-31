@@ -1240,6 +1240,11 @@ img.clickable {
   #agreement {
     margin-top: 30px;
   }
+
+  #sec5 .br__explain__text p.ff-noto {
+    font-size: 1.05rem;
+    line-height: 1.9rem;
+  }
 }
 
 /* 태블릿 (768px - 1199px) */
@@ -1361,16 +1366,16 @@ img.clickable {
     grid-template-columns: 1fr;
   }
 
-  #sec5 .br__expalin__text {
+  #sec5 .br__explain__text {
     border-top: 1px solid #ddd;
   }
 
-  #sec5 .br__expalin__text p {
+  #sec5 .br__explain__text p {
     text-align: center;
     font-size: 1.44rem;
   }
 
-  #sec5 .br__expalin__text p.ff-tmon {
+  #sec5 .br__explain__text p.ff-tmon {
     text-align: center;
     font-size: 1.88rem;
   }
@@ -1405,6 +1410,20 @@ img.clickable {
   }
   #sec3 .box.container {
     padding: 20px 10px;
+  }
+
+  #sec5 .br__explain__text p {
+    text-align: center;
+    font-size: 1.22rem;
+  }
+
+  #sec5 .br__explain__text p.ff-tmon {
+    text-align: center;
+    font-size: 1.44rem;
+  }
+  #sec5 .br__expalin__text p.ff-tmon span {
+    text-align: center;
+    font-size: 1.33rem;
   }
 }
 
