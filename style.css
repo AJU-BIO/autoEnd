@@ -1098,6 +1098,31 @@ img.clickable {
 #sec5 .box.container {
   flex-direction: column;
   align-items: center;
+  gap: 30px;
+}
+
+#sec5 .br__explain {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  align-items: center;
+  padding: 25px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+}
+
+#sec5 img {
+  width: 100%;
+  height: auto;
+}
+
+#sec5 .br__expalin__text {
+  padding: 20px;
+  text-align: left;
+  word-break: keep-all;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
 @keyframes slideDown {
@@ -1331,6 +1356,28 @@ img.clickable {
   #sec3 .contentBox > .contentBox__box {
     width: 70%;
   }
+
+  #sec5 .br__explain {
+    grid-template-columns: 1fr;
+  }
+
+  #sec5 .br__expalin__text {
+    border-top: 1px solid #ddd;
+  }
+
+  #sec5 .br__expalin__text p {
+    text-align: center;
+    font-size: 1.44rem;
+  }
+
+  #sec5 .br__expalin__text p.ff-tmon {
+    text-align: center;
+    font-size: 1.88rem;
+  }
+  #sec5 .br__expalin__text p.ff-tmon span {
+    text-align: center;
+    font-size: 1.66rem;
+  }
 }
 
 /* 650px 근처의 화면에서 발생하는 여백 문제 해결 */
@@ -1385,6 +1432,11 @@ img.clickable {
 
   #sec3 .arrow-icon {
     width: 15px;
+  }
+
+  #sec5 iframe {
+    width: 90% !important;
+    height: calc(90vw * 315 / 560) !important;
   }
 }
 
